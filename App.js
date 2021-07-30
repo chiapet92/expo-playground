@@ -1,12 +1,5 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  Image,
-  SafeAreaView,
-} from "react-native";
+import { StyleSheet, SafeAreaView, Button } from "react-native";
 
 // View -> UIView for iOS
 export default function App() {
@@ -15,17 +8,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text onPress={handlePress}>Hello React Native.</Text>
-      <TouchableOpacity onPress={() => console.log("image pressed")}>
-        <Image
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        />
-      </TouchableOpacity>
-      <StatusBar style="auto" />
+      <Button title="Click me" onPress={() => console.log("button tapped.")} />
     </SafeAreaView>
   );
 }
