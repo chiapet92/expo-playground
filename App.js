@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Button } from "react-native";
+import { StyleSheet, SafeAreaView, Alert, Button } from "react-native";
 
 // View -> UIView for iOS
 export default function App() {
@@ -8,7 +8,15 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Button title="Click me" onPress={() => console.log("button tapped.")} />
+      <Button
+        title="Click me"
+        onPress={() =>
+          Alert.alert("my title", "my message", [
+            { text: "Yes", onPress: () => console.log("pressed yes") },
+            { text: "No", onPress: () => console.log("pressed no") },
+          ])
+        }
+      />
     </SafeAreaView>
   );
 }
