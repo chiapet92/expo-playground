@@ -1,33 +1,39 @@
 import React from "react";
 import {
+  Dimensions,
   StyleSheet,
   SafeAreaView,
-  Alert,
-  Button,
+  View,
   Platform,
 } from "react-native";
+// preferred way to detect screen flips
+import {
+  useDeviceOrientation,
+  useDimensions,
+} from "@react-native-community/hooks";
 
 // View -> UIView for iOS
 export default function App() {
   console.log("App executed");
-  const handlePress = () => console.log("text pressed");
+  console.log(Dimensions.get("screen"));
+  console.log(useDimensions());
+  const { landscape } = useDeviceOrientation();
 
   return (
-    <SafeAreaView style={[styles.container, containerStyle]}>
-      <Button
-        title="Click me"
-        onPress={() =>
-          Alert.alert("my title", "my message", [
-            { text: "Yes", onPress: () => console.log("pressed yes") },
-            { text: "No", onPress: () => console.log("pressed no") },
-          ])
-        }
-      />
+    <SafeAreaView style={styles.container}>
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "100%",
+          height: landscape ? "100%" : "50%",
+          // width: 150, // density independent pixels, also can do "50%"
+          // height: 70,
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
 
-const containerStyle = { backgroundColor: "orange" };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
