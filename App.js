@@ -6,13 +6,18 @@ export default function App() {
   return (
     <View
       style={{
-        backgroundColor: "dodgerblue",
+        backgroundColor: "#fff",
         flex: 1,
+        flexDirection: "row", // horizontal
+        justifyContent: "center", // main
+        alignItems: "center", // secondary axis
       }}
     >
-      <View style={{ backgroundColor: "dodgerblue", flex: 1 }} />
-      <View style={{ backgroundColor: "gold", flex: 2 }} />
-      <View style={{ backgroundColor: "tomato", flex: 1 }} />
+      <View
+        style={{ backgroundColor: "dodgerblue", width: 100, height: 300 }}
+      />
+      <View style={{ backgroundColor: "gold", width: 100, height: 200 }} />
+      <View style={{ backgroundColor: "tomato", width: 100, height: 100 }} />
     </View>
   );
 }
