@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
+import AppText from "./app/components/AppText";
 
 // View -> UIView for iOS
 export default function App() {
@@ -11,20 +12,7 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <Text
-        style={{
-          fontFamily: "Courier", // iOS only
-          fontStyle: "italic",
-          fontWeight: "600",
-          color: "tomato",
-          fontSize: 30,
-          textTransform: "capitalize",
-          textAlign: "center",
-          lineHeight: 40,
-        }}
-      >
-        I love react native. Here is some more text
-      </Text>
+      <AppText>I love react native. Here is some more text</AppText>
     </View>
   );
 }
