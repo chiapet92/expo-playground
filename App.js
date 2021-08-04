@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import AppText from "./app/components/AppText";
+import AppButton from "./app/components/AppButton";
 
 // View -> UIView for iOS
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <AppText>I love react native!</AppText>
+      <AppButton title="Login" />
     </View>
   );
 }
