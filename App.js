@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import AppText from "./app/components/AppText";
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 // View -> UIView for iOS
 export default function App() {
   return (
@@ -12,7 +11,8 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <AppText>I love react native. Here is some more text</AppText>
+      {/* https://icons.expo.fyi/ */}
+      <MaterialCommunityIcons name="email" size={60} color="dodgerblue" />
     </View>
   );
 }
