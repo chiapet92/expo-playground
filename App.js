@@ -12,7 +12,7 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <AppButton title="Login" />
+      <AppButton title="Login" onPress={() => console.log("tapped")} />
     </View>
   );
 }
