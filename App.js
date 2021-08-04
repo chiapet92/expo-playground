@@ -16,13 +16,24 @@ export default function App() {
           backgroundColor: "dodgerblue",
           width: 100,
           height: 100,
-          // for iOS
-          shadowColor: "grey",
-          shadowOffset: { height: 0, width: 10 },
-          shadowOpacity: 1,
-          shadowRadius: 10,
-          // for android
-          elevation: 10,
+          padding: 20, // padding applies to what is inside
+          paddingHorizontal: 10,
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: "gold",
+            width: 50,
+            height: 50,
+          }}
+        ></View>
+      </View>
+      <View
+        style={{
+          backgroundColor: "tomato",
+          width: 100,
+          height: 100,
+          margin: 20, // margin is around
         }}
       ></View>
     </View>
