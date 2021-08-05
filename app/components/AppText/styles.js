@@ -3,7 +3,6 @@ import { StyleSheet, Platform } from "react-native";
 // rnss = react native style sheet
 const styles = StyleSheet.create({
   text: {
-    color: "tomato",
     ...Platform.select({
       ios: {
         fontSize: 30,
