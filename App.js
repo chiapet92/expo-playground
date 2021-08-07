@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { Text, TextInput } from "react-native";
 
 import Screen from "./app/components/Screen";
-import Icon from "./app/components/Icon";
-import ListItem from "./app/components/ListItem";
-import AccountsScreen from "./app/screens/AccountsScreen";
-import ListingScreen from "./app/screens/ListingScreen";
 
 // View -> UIView for iOS
 export default function App() {
-  return <ListingScreen />;
+  const [firstName, setFirstName] = useState("");
+
+  return (
+    <Screen>
+      <Text>{firstName}</Text>
+      <TextInput
+        onChangeText={(text) => setFirstName(text)}
+        placeholder="First Name"
+        style={{
+          borderBottomColor: "#ccc",
+          borderBottomWidth: 1,
+        }}
+      />
+    </Screen>
+  );
 }
