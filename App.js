@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import LoginScreen from "./app/screens/LoginScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 // View -> UIView for iOS
 export default function App() {
-  return <LoginScreen />;
+  return <MessagesScreen />;
 }
