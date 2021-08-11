@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
   View,
   StyleSheet,
@@ -9,11 +8,11 @@ import {
   FlatList,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import AppText from "./AppText";
-import Screen from "./Screen";
 
+import Text from "./Text";
 import defaultStyles from "../config/styles";
 import PickerItem from "./PickerItem";
+import Screen from "./Screen";
 
 function AppPicker({
   icon,
@@ -30,24 +29,25 @@ function AppPicker({
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-        <View style={[styles.container, width]}>
+        <View style={[styles.container, { width }]}>
           {icon && (
             <MaterialCommunityIcons
               name={icon}
               size={20}
-              colors={defaultStyles.colors.medium}
+              color={defaultStyles.colors.medium}
               style={styles.icon}
             />
           )}
           {selectedItem ? (
-            <AppText style={styles.text}>{selectedItem.label}</AppText>
+            <Text style={styles.text}>{selectedItem.label}</Text>
           ) : (
-            <AppText style={styles.placeholder}>{placeholder}</AppText>
+            <Text style={styles.placeholder}>{placeholder}</Text>
           )}
+
           <MaterialCommunityIcons
-            name={"chevron-down"}
+            name="chevron-down"
             size={20}
-            colors={defaultStyles.colors.medium}
+            color={defaultStyles.colors.medium}
           />
         </View>
       </TouchableWithoutFeedback>
@@ -57,11 +57,11 @@ function AppPicker({
           <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}
+            numColumns={numberOfColumns}
             renderItem={({ item }) => (
               <PickerItemComponent
                 item={item}
                 label={item.label}
-                numColumns={numberOfColumns}
                 onPress={() => {
                   setModalVisible(false);
                   onSelectItem(item);
